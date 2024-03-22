@@ -10,8 +10,7 @@ export default function LoginPage() {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
 
-    const handleSubmit = async (e) => {
-        e.preventDefault();
+    const handleSubmit = async () => {
         // Implement your login logic here
         // For demo purposes, let's assume hardcoded credentials
         const validUsername = 'root';
