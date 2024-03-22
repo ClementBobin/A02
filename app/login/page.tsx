@@ -17,9 +17,7 @@ export default function LoginPage() {
         const validPassword = 'linux';
 
         if (username === validUsername && password === validPassword) {
-            console.log(`Welcome, ${username}!`);
-            // Redirect to dashboard or homepage
-            router.push('/dashboard');
+            alert(`Welcome, ${username}!`);
         } else {
             setErrorMessage('Invalid username or password. Please try again.');
         }
