@@ -3,6 +3,7 @@
 import "./style.css"
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import bcrypt from 'bcryptjs';
 
 export default function LoginPage() {
     const router = useRouter();
@@ -12,9 +13,9 @@ export default function LoginPage() {
 
     const handleSubmit = async () => {
         const validUsername = 'root';
-        const validPassword = 'linux4568';
+        const validPasswordHash = "$2a$10$fVCnEKQDjeXm9eoT.3lBvuGEk/cIZ3gFccydlL3XOxNhiJjxr/Quy";
 
-        if (username === validUsername && password === validPassword) {
+        if (username === validUsername && await bcrypt.compare(password, validPasswordHash)) {
             alert(`Welcome, ${username}!`);
         } else {
             setErrorMessage('Invalid username or password. Please try again.');
